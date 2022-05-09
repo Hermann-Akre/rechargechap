@@ -1,0 +1,6 @@
+{
+	"appId": "com.rechargechap.test",
+	"appName": "Recharge Chap",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}

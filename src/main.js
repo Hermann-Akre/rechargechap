@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router';
+import store from './store';
+import axios from 'axios'
 
 import { IonicVue } from '@ionic/vue';
 
@@ -23,9 +25,25 @@ import '@ionic/vue/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+/* animate css */
+import 'animate.css';
+
+/* Tailwind css */
+import '../public/assets/css/style.css';
+
 const app = createApp(App)
   .use(IonicVue)
-  .use(router);
+  .use(store)
+  .use(router, axios);
+
+
+/* axios defauk URl */
+//const devUrl = 'http://localhost:8000'
+const testUrl = 'http://app.rechargement.test.mutuelleawoundjo.com/'
+//const prodUrl = ''
+
+axios.defaults.baseURL = testUrl
+
   
 router.isReady().then(() => {
   app.mount('#app');
